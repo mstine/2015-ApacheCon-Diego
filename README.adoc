@@ -1,0 +1,8 @@
+= Cloud Foundry Diego: Modular and Extensible Substructure for Microservices
+
+_As presented at ApacheCon North America 2015 in Austin, TX._
+
+A PDF of the slides is in this repo. To view the slides as they were presented, you'll need to use http://www.decksetapp.com[Deckset] with the markdown source.
+
+
+
