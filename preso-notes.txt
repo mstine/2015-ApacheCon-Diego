@@ -1,0 +1,35 @@
+=========
+AWS Demo:
+=========
+
+ltc target 52.5.229.248.xip.io
+ltc create lattice-app cloudfoundry/lattice-app
+
+
+========
+SC Demo:
+========
+
+LATTICE_CLI_TIMEOUT=180 ltc create spring-cloud-lattice-sample 192.168.99.100:5000/spring-cloud-lattice-sample
+
+ltc scale spring-cloud-lattice-sample 3
+
+http://spring-cloud-lattice-sample.192.168.11.11.xip.io?service=spring-cloud-lattice-sample
+
+
+========
+XD Demo:
+========
+
+java -jar $XD_POC_ADMIN/build/libs/xolpoc-admin-0.0.1-SNAPSHOT.jar
+
+Admin modules: http://xd-admin.192.168.11.11.xip.io/
+
+curl -X POST -H "Content-Type: text/plain" --data "time | log" http://xd-admin.192.168.11.11.xip.io/ticktock
+
+ltc logs xd-ticktock-log-1
+
+ltc scale xd-ticktock-log-1 2
+ltc list
+
+curl -X DELETE http://xd-admin.192.168.11.11.xip.io/ticktock
